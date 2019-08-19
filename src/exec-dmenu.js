@@ -5,7 +5,7 @@ const dmenuPath = process.env.DMENU_PATH || 'rofi -dmenu -password'
 module.exports = (...args) => choices =>
   new Promise((resolve, reject) => {
     const execCommand = `${dmenuPath} ${args.join(' ')}`
-    console.debug('$', execCommand, args)
+    console.debug('$$', execCommand, args)
 
     const dmenu = spawn(dmenuPath, args)
     dmenu.stdin.write(choices)
